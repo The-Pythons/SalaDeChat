@@ -1,4 +1,4 @@
-package sala;
+package server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -30,7 +30,7 @@ public class Server {
 	
 	public static void main(String[] args) throws IOException {
 		 
-		new Server(10001);
+		new Server(10000);
 
 	}
 

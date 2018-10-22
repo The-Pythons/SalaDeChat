@@ -1,4 +1,4 @@
-package sala;
+package cliente;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -30,7 +30,7 @@ public class Cliente {
 	
 	public static void main(String[] args) throws IOException{
 		
-		new Cliente("localhost",10001);
+		new Cliente("localhost",10000);
 
 	}
 
