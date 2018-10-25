@@ -6,27 +6,28 @@ import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class Cliente {
+public class Cliente3 {
 	
 	String servidor = "localhost";
 	int puerto;
 	
-	public Cliente(String s ,int p) throws InterruptedException, IOException{
+	public Cliente3(String s ,int p) throws InterruptedException, IOException{
 		
 		
 				this.servidor=s;
 				this.puerto=p;
 				
-				Socket so = new Socket( this.servidor,this.puerto );
+				 Socket so = new Socket( this.servidor,this.puerto );
 				DataInputStream input = new DataInputStream(so.getInputStream());
 				DataOutputStream  output = new DataOutputStream(so.getOutputStream());
-				output.writeUTF("ebis19");
+				output.writeUTF("ebis20");
 				System.out.println(input.readUTF());
 				System.out.println(input.readUTF());
-				Msjentrantes me = new Msjentrantes(so);
-				Msjsalientes ms = new Msjsalientes(so);
-				me.start();
-				ms.start();
+				output.writeUTF("holaa");
+				while(true)
+					System.out.println(input.readUTF());
+					
+				//output.writeUTF("desconectar");
 				
 				/*try {
 					output.writeUTF("hello server");
@@ -45,7 +46,7 @@ public class Cliente {
 				}
 				output.writeUTF("hello server");*/
 				
-			//	so.close();
+				//so.close();
 		
 	}
 
@@ -54,7 +55,7 @@ public class Cliente {
 	
 	public static void main(String[] args) throws IOException, InterruptedException{
 		
-		new Cliente("localhost",10000);
+		new Cliente3("localhost",10000);
 
 	}
 
