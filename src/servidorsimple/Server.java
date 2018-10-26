@@ -15,7 +15,6 @@ public class Server {
 	public Server(int puerto) throws IOException, InterruptedException{
 		server = new ServerSocket(puerto);
 		conexiones = new HashMap<String,Conexion>();
-	
 	}
 	
 	public void  iniciar() throws IOException {
@@ -27,7 +26,6 @@ public class Server {
 				so=server.accept();
 				input = new DataInputStream(so.getInputStream());
 				output = new DataOutputStream(so.getOutputStream());
-				
 				output.writeUTF("hello cliente");
 				String usuario = input.readUTF();
 				output.writeUTF("Usuario logeado");
@@ -41,7 +39,6 @@ public class Server {
 		}
 		
 	}
-	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Server s= new Server(10000);
 		s.iniciar();

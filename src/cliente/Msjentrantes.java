@@ -20,7 +20,6 @@ public class Msjentrantes  extends Thread {
 				System.out.println(input.readUTF());
 				Thread.sleep(200);
 			} catch (IOException | InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}

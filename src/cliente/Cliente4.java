@@ -28,24 +28,7 @@ public class Cliente4 {
 				me.start();
 				ms.start();
 				
-				/*try {
-					output.writeUTF("hello server");
-				} catch (IOException e1) {
-					System.out.println("Servidor no encontrado");;
-				}
-				
-				for (int i = 0; i < 5; i++) {
-					try {
-						System.out.println(input.readUTF());
-					} catch (IOException e) {
-						System.out.println("desconectado del servidor");;
-						
-					}
-					Thread.sleep(200);
-				}
-				output.writeUTF("hello server");*/
-				
-			//	so.close();
+		
 		
 	}
 
