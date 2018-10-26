@@ -9,9 +9,8 @@ public class Msjentrantes  extends Thread {
 	
 	private DataInputStream input;
 
-	public Msjentrantes(Socket socket) throws IOException{
-		//this.input =input ;
-		input= new  DataInputStream (socket.getInputStream());
+	public Msjentrantes(DataInputStream input) throws IOException{
+		this.input =input ;
 	}
 	
 	public void run(){

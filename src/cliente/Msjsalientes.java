@@ -11,11 +11,10 @@ public class Msjsalientes  extends Thread {
 	private DataInputStream input;
 	private DataOutputStream output;
 
-	public Msjsalientes(Socket socket) throws IOException{
+	public Msjsalientes(DataInputStream input,DataOutputStream output) throws IOException{
 		super("1");
-		this.input = new  DataInputStream (socket.getInputStream());
-		this.output =  new DataOutputStream (socket.getOutputStream()); 
-		
+		this.output =  output;
+		this.input = input;
 	}
 	
 	public void run(){

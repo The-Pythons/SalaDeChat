@@ -32,7 +32,6 @@ public class Server {
 				this.conexiones.put(usuario,new Conexion(usuario,input,output,this.conexiones));
 				this.conexiones.get(usuario).start();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				cerrar=false;
 				so.close();
 			}
