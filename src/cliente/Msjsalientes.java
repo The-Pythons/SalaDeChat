@@ -21,7 +21,7 @@ public class Msjsalientes  extends Thread {
 	public void run(){
 		while(true) {
 			try {
-				this.output.writeUTF("hola");
+				this.output.writeUTF("Hola Mundo");
 				//System.out.println(this.input.readUTF());
 				Thread.sleep(5000);
 			} catch (IOException | InterruptedException e) {
