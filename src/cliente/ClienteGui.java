@@ -64,7 +64,7 @@ public class ClienteGui extends JFrame {
 		m.enviarMsj("ebis1");
 
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Enviar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
@@ -75,21 +75,23 @@ public class ClienteGui extends JFrame {
 				}
 			}
 		});
-		btnNewButton.setBounds(248, 222, 114, 25);
+		btnNewButton.setBounds(334, 222, 102, 25);
 		contentPane.add(btnNewButton);
 		
 		textField = new JTextField();
-		textField.setBounds(37, 218, 184, 34);
+		textField.setBounds(22, 218, 300, 34);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		DefaultListModel<String> modelo = new DefaultListModel<String>();
 		modelo.addElement("Rojo Claro");
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(68, 57, 294, 134);
+		scrollPane.setBounds(22, 12, 414, 179);
 		contentPane.add(scrollPane);
 		
 		JList<String> list = new JList<String>(modelo);
+		list.setBounds(32, 14, 291, 177);
+		contentPane.add(list);
 		modelo.addElement("juan");
 		
 	
@@ -101,7 +103,5 @@ public class ClienteGui extends JFrame {
 		Msjentrantes me = new  Msjentrantes(m,modelo);
 		Msjsalientes ms = new Msjsalientes(m);
 		me.start();
-		
-		scrollPane.setViewportView(list);
 	}
 }
