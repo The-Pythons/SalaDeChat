@@ -1,33 +1,34 @@
 package cliente;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.Socket;
+import java.util.Scanner;
 
 public class Msjsalientes  extends Thread {
-	
-	
-	private DataInputStream input;
-	private DataOutputStream output;
 
-	public Msjsalientes(DataInputStream input,DataOutputStream output) throws IOException{
+	Msj m;
+	public Msjsalientes(Msj m) throws IOException{
 		super("1");
-		this.output =  output;
-		this.input = input;
+		this.m=m;
 	}
-	
 	public void run(){
-		while(true) {
+		Scanner mensajes = new Scanner(System.in);
+		String  msj="hola";
+		boolean dis=true;
+		while(dis) {
 			try {
-				this.output.writeUTF("Hola Mundo");
-				//System.out.println(this.input.readUTF());
-				Thread.sleep(5000);
-			} catch (IOException | InterruptedException e) {
+				System.out.println(">>");
+				msj=mensajes.nextLine();
+				this.m.enviarMsj(msj);
+				if(msj=="desconectar")
+					dis=false;
+			} catch (IOException e ) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		
 	}
+		
+		mensajes.close();
 	
 	}
 }

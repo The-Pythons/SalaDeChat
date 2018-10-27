@@ -15,8 +15,8 @@ public class Conexion{
 		msjentrantes= new MsjEntrantes(usuario,socket,sala);
 		msjsalientes= new MsjSalientes(usuario,socket,sala);
 		msjentrantes.start();
-		System.out.println("nueva connexión");
-		//msjsalientes.start();
+		System.out.println("nueva connexión de "+usuario);
+		msjsalientes.start();
 		
 		
 	}

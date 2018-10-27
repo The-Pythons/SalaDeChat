@@ -45,6 +45,7 @@ public class Conexion extends Thread{
 		while(this.conectado){
 				try {
 					min = this.input.readUTF();
+					System.out.println(min);
 					if(min=="desconectar")
 						conectado=false;
 					for (Entry<String,Conexion> u : this.conexiones.entrySet()) {

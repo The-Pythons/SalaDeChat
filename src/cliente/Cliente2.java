@@ -5,6 +5,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 
 public class Cliente2 {
 	
@@ -24,11 +25,19 @@ public class Cliente2 {
 				System.out.println(input.readUTF());
 				System.out.println(input.readUTF());
 				output.writeUTF("holaa");
-				for (int i = 0; i < 2; i++) {
-					System.out.println(input.readUTF());
+				Scanner mensajes = new Scanner(System.in);
+				String  msj="hola";
+				boolean dis=true;
+				while(dis) {
+						msj=mensajes.nextLine();
+						output.writeUTF(msj);
+						if(msj=="desconectar")
+							dis=false;
 				}
 					
 				output.writeUTF("desconectar");
+				mensajes.close();
+				so.close();
 				
 		
 	}

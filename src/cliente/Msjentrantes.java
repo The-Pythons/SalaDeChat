@@ -1,22 +1,22 @@
 package cliente;
 
-import java.io.DataInputStream;
 import java.io.IOException;
-import java.net.Socket;
 
 public class Msjentrantes  extends Thread {
 	
 	
-	private DataInputStream input;
+	//private DataInputStream input;
 
-	public Msjentrantes(DataInputStream input) throws IOException{
-		this.input =input ;
+	Msj msj;
+	
+	public Msjentrantes(Msj msj) throws IOException{
+		this.msj = msj  ;
 	}
 	
 	public void run(){
 		while(true) {
 			try {
-				System.out.println(input.readUTF());
+				System.out.println(msj.recivirMsj());
 				Thread.sleep(200);
 			} catch (IOException | InterruptedException e) {
 				e.printStackTrace();

@@ -26,6 +26,7 @@ public class Cliente3 {
 				output.writeUTF("holaa");
 				while(true)
 					System.out.println(input.readUTF());
+				
 	}
 
 	

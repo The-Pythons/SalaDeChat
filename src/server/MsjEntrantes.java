@@ -21,7 +21,6 @@ public class MsjEntrantes extends Thread{
 		while(this.conectado){
 			try {
 				min = input.readUTF();
-				System.out.println(min);
 				if(min=="desconectar")
 					conectado=false;
 				sala.agregarMsj(new Msj(super.getName(),min));

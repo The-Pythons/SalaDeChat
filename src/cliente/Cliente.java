@@ -17,15 +17,20 @@ public class Cliente {
 				this.puerto=p;
 				
 				Socket so = new Socket( this.servidor,this.puerto );
-				DataInputStream in = new DataInputStream(so.getInputStream());
-				DataOutputStream  out = new DataOutputStream(so.getOutputStream());
-				out.writeUTF("ebis19");
-				System.out.println(in.readUTF());
-				System.out.println(in.readUTF());
-				Msjentrantes me = new Msjentrantes(in);
-				Msjsalientes ms = new Msjsalientes(in,out);
+				DataInputStream input = new DataInputStream(so.getInputStream());
+				DataOutputStream output = new DataOutputStream(so.getOutputStream());
+				Msj m =new Msj(so);
+				m.enviarMsj("ebis1");
+				
+				//out.writeUTF("ebis19");
+				System.out.println(m.recivirMsj());
+				System.out.println(m.recivirMsj());
+				
+				Msjentrantes me = new Msjentrantes(m);
+				Msjsalientes ms = new Msjsalientes(m);
 				me.start();
 				ms.start();
+				//so.close();
 		
 	}
 
