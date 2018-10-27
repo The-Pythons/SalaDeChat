@@ -4,7 +4,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 public class Cliente3 {
 	
@@ -24,9 +23,8 @@ public class Cliente3 {
 				System.out.println(input.readUTF());
 				System.out.println(input.readUTF());
 				output.writeUTF("holaa");
-				while(true)
-					System.out.println(input.readUTF());
-				
+				System.out.println(input.readUTF());
+				so.close();
 	}
 
 	

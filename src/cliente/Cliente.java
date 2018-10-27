@@ -1,10 +1,8 @@
 package cliente;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
+
 import java.io.IOException;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 public class Cliente {
 	
@@ -17,8 +15,6 @@ public class Cliente {
 				this.puerto=p;
 				
 				Socket so = new Socket( this.servidor,this.puerto );
-				DataInputStream input = new DataInputStream(so.getInputStream());
-				DataOutputStream output = new DataOutputStream(so.getOutputStream());
 				Msj m =new Msj(so);
 				m.enviarMsj("ebis1");
 				
