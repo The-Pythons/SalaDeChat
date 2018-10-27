@@ -15,15 +15,6 @@ public class Conexion extends Thread{
 	private DataOutputStream output;
 	private HashMap<String,Conexion> conexiones;
 	private String usuario;
-	/*public Conexion(String usuario,Socket socket, HashMap<String, Conexion> conexiones) throws IOException {
-		this.socket = socket;
-		this.conectado = true;
-		this.usuario=usuario;
-		this.input = new DataInputStream(socket.getInputStream());
-		this.output = new DataOutputStream(socket.getOutputStream());
-		this.conexiones = conexiones;
-		
-	}*/
 	
 	
 	public Conexion(String usuario, DataInputStream input, DataOutputStream output,
